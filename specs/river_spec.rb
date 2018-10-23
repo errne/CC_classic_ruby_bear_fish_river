@@ -6,14 +6,14 @@ require_relative('../fish')
 class RiverTest < Minitest::Test
 
   def setup
-    @fish1 = Fish.new("Brenda")
+    fish1 = Fish.new("Brenda")
     fish2 = Fish.new("Renda")
     fish3 = Fish.new("Bruda")
     fish4 = Fish.new("Da")
     fish5 = Fish.new("LeBrenda")
     fish6 = Fish.new("Bran")
 
-    @fishes = [@fish1, fish2, fish3, fish4, fish5, fish6]
+    @fishes = [fish1, fish2, fish3, fish4, fish5, fish6]
   end
 
   def test_river_has_name

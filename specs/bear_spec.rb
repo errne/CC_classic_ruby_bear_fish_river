@@ -23,7 +23,6 @@ class BearTest < Minitest::Test
   end
 
   def test_bear_has_name
-
     assert_equal("Fluffy", @bear1.name)
   end
 
@@ -39,13 +38,22 @@ class BearTest < Minitest::Test
   def test_food_count
     expected = @bear1.food_count()
     assert_equal(0, expected)
-
   end
 
   def test_bear_eats_fish
     @bear1.eat(@nile)
     assert_equal(1, @bear1.stomach.length)
     assert_equal("Brenda", @bear1.stomach[0].name)
+    assert_equal(5, @nile.fish_count)
+  end
+
+  def test_bear_eats_fish__thrice
+    @bear1.eat(@nile)
+    @bear1.eat(@nile)
+    @bear1.eat(@nile)
+    assert_equal(3, @bear1.stomach.length)
+    assert_equal("Bruda", @bear1.stomach[2].name)
+    assert_equal(3, @nile.fish_count)
   end
 
   def test_bear_eats_fish__empty_river
