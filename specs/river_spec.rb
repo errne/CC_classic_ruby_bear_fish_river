@@ -33,7 +33,7 @@ class RiverTest < Minitest::Test
 
   def test_remove_fish
     nile = River.new("Nile", @fishes)
-    nile.remove_fish(@fish1)
+    nile.remove_fish()
     assert_equal(5, nile.fish_count)
   end
 
