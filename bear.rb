@@ -15,8 +15,12 @@ class Bear
   end
 
   def eat(river)
+    if river.fishes.length > 0
     add_fish_to_stomach(river.fishes[0])
     river.remove_fish()
+    else
+      return "There are no fish in the river"
+    end
   end
 
   def food_count()

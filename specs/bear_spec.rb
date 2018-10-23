@@ -17,6 +17,7 @@ class BearTest < Minitest::Test
 
     fishes = [fish1, fish2, fish3, fish4, fish5, fish6]
     @nile = River.new("Nile", fishes )
+    @spring = River.new("Empty", [])
     @bear1 = Bear.new("Fluffy")
 
   end
@@ -47,4 +48,7 @@ class BearTest < Minitest::Test
     assert_equal("Brenda", @bear1.stomach[0].name)
   end
 
+  def test_bear_eats_fish__empty_river
+    assert_equal("There are no fish in the river", @bear1.eat(@spring))
+  end
 end
